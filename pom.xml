@@ -159,7 +159,7 @@
         <netbeans.checkstyle.format>true</netbeans.checkstyle.format>
 
         <!--  ForgeRock build tools version -->
-        <forgerockBuildToolsVersion>1.0.3</forgerockBuildToolsVersion>
+        <forgerockBuildToolsVersion>1.0.4-SNAPSHOT</forgerockBuildToolsVersion>
 
         <!-- Forgerock binary license name -->
         <binary.license.name>Forgerock_License.txt</binary.license.name>
