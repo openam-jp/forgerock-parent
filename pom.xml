@@ -33,7 +33,7 @@
     <packaging>pom</packaging>
     <name>ForgeRock Parent</name>
     <description>Parent POM for ForgeRock projects. Provides default project build configuration.</description>
-    <url>http://www.forgerock.com</url>
+    <url>https://github.com/openam-jp/forgerock-parent</url>
     <licenses>
         <license>
             <name>CDDL-1.0</name>
@@ -43,75 +43,18 @@
         </license>
     </licenses>
     <organization>
-        <name>ForgeRock AS</name>
-        <url>http://www.forgerock.com</url>
+        <name>OpenAM Consortium</name>
+        <url>https://www.openam.jp/</url>
     </organization>
     <issueManagement>
-        <system>jira</system>
-        <url>https://bugster.forgerock.org</url>
+        <system>GitHub</system>
+        <url>https://github.com/openam-jp/forgerock-parent/issues</url>
     </issueManagement>
     <scm>
-        <connection>scm:git:ssh://git@stash.forgerock.org:7999/commons/forgerock-parent.git</connection>
-        <developerConnection>scm:git:ssh://git@stash.forgerock.org:7999/commons/forgerock-parent.git</developerConnection>
-        <url>http://stash.forgerock.org/projects/COMMONS/repos/forgerock-parent/browse</url>
-      <tag>2.0.6</tag>
-  </scm>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>forgerock-snapshots</id>
-            <name>ForgeRock Snapshot Repository</name>
-            <url>${forgerockDistMgmtSnapshotsUrl}</url>
-        </snapshotRepository>
-        <repository>
-            <id>forgerock-staging</id>
-            <name>ForgeRock Release Repository</name>
-            <url>${forgerockDistMgmtReleasesUrl}</url>
-        </repository>
-        <site>
-            <id>community.internal.forgerock.com</id>
-            <name>ForgeRock Community</name>
-            <url>scp://community.internal.forgerock.com/var/www/vhosts/commons.forgerock.org/httpdocs/forgerock-parent</url>
-        </site>
-    </distributionManagement>
-
-    <!-- (see FAQ at http://maven.apache.org/guides/mini/guide-central-repository-upload.html ) -->
-    <repositories>
-        <repository>
-            <id>forgerock-staging-repository</id>
-            <name>ForgeRock Release Repository</name>
-            <url>http://maven.forgerock.org/repo/releases</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-        <repository>
-            <id>forgerock-snapshots-repository</id>
-            <name>ForgeRock Snapshot Repository</name>
-            <url>http://maven.forgerock.org/repo/snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>forgerock-plugins-repository</id>
-            <name>ForgeRock Plugin Repository</name>
-            <url>http://maven.forgerock.org/repo/plugins</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
+        <connection>scm:git:https://github.com/openam-jp/forgerock-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:openam-jp/forgerock-parent.git</developerConnection>
+        <url>https://github.com/openam-jp/forgerock-parent</url>
+    </scm>
 
     <properties>
         <!-- ************** -->
@@ -211,12 +154,6 @@
 
         <!-- maven-release-plugin http://maven.apache.org/plugins/maven-release-plugin/ -->
         <mavenReleasePluginVersion>2.5.1</mavenReleasePluginVersion>
-
-        <!-- ***************** -->
-        <!-- Repository Deployment URLs -->
-        <!-- ***************** -->
-        <forgerockDistMgmtSnapshotsUrl>http://maven.forgerock.org/repo/snapshots</forgerockDistMgmtSnapshotsUrl>
-        <forgerockDistMgmtReleasesUrl>http://maven.forgerock.org/repo/releases</forgerockDistMgmtReleasesUrl>
 
         <!-- this property makes sure NetBeans 6.8+ picks up some formatting rules from checkstyle -->
         <netbeans.checkstyle.format>true</netbeans.checkstyle.format>
