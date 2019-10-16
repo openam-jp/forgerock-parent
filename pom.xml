@@ -164,11 +164,6 @@
 
         <!-- Forgerock binary license name -->
         <binary.license.name>Forgerock_License.txt</binary.license.name>
-
-        <!-- openam copy module version -->
-        <jato.version>2005-05-04</jato.version>
-        <authapi.version>2005-08-12</authapi.version>
-        <jdmk.version>2007-01-10</jdmk.version>
     </properties>
 
     <prerequisites>
