@@ -167,8 +167,6 @@
 
         <!-- openam copy module version -->
         <jato.version>2005-05-04</jato.version>
-        <cc-ui.version>2008-08-08</cc-ui.version>
-        <log4j.version>1.2.16</log4j.version>
         <authapi.version>2005-08-12</authapi.version>
         <jdmk.version>2007-01-10</jdmk.version>
     </properties>
