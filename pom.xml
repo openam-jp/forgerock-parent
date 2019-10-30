@@ -23,6 +23,7 @@
  "Portions Copyrighted [year] [name of copyright owner]"
 
  Portions Copyrighted 2019 Open Source Solution Technology Corporation
+ Portions Copyrighted 2019 OGIS-RI Co., Ltd.
 -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -78,7 +79,7 @@
         <findbugsPluginVersion>3.0.1</findbugsPluginVersion>
 
         <!-- maven-javadoc-plugin -->
-        <javadocPluginVersion>2.9</javadocPluginVersion>
+        <javadocPluginVersion>3.1.1</javadocPluginVersion>
         <!-- forgerock-build-tools stylesheet org/forgerock/javadoc/javadoc.css
              does not work with JDK7 -->
         <javadocStylesheet />
@@ -319,12 +320,14 @@
                         <show>protected</show>
                         <excludePackageNames>com.*</excludePackageNames>
                         <stylesheetfile>${javadocStylesheet}</stylesheetfile>
+                        <source>7</source>
+                        <additionalOptions>${jdk11-javadoc.opt.html4}</additionalOptions>
                     </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-plugin-plugin</artifactId>
-                    <version>3.2</version>
+                    <version>3.6.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -414,6 +417,9 @@
                             <version>${forgerockBuildToolsVersion}</version>
                         </dependency>
                     </dependencies>
+                    <configuration>
+                        <argLine>${jdk11-build.opt.add-all-system}</argLine>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -638,6 +644,18 @@
     </build>
 
     <profiles>
+       <profile>
+           <id>jdk11-option</id>
+           <activation>
+               <jdk>[11,)</jdk>
+           </activation>
+            <properties>
+                <jdk11-build.opt.add-all-system>--add-modules ALL-SYSTEM</jdk11-build.opt.add-all-system>
+                <jdk11-javadoc.opt.html4>-html4</jdk11-javadoc.opt.html4>
+                <jdk11-surefire.opt>--add-opens java.base/jdk.internal.util=ALL-UNNAMED --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.xml/jdk.xml.internal=ALL-UNNAMED</jdk11-surefire.opt>
+                <jdk11-openamjp.internal-module>openam-internal</jdk11-openamjp.internal-module>
+            </properties>
+       </profile>
         <profile>
             <id>enforce</id>
             <activation>
