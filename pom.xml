@@ -30,7 +30,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>jp.openam</groupId>
     <artifactId>forgerock-parent</artifactId>
-    <version>2.0.7-SNAPSHOT</version>
+    <version>2.0.7</version>
     <packaging>pom</packaging>
     <name>ForgeRock Parent</name>
     <description>Parent POM for ForgeRock projects. Provides default project build configuration.</description>
@@ -55,7 +55,8 @@
         <connection>scm:git:https://github.com/openam-jp/forgerock-parent.git</connection>
         <developerConnection>scm:git:git@github.com:openam-jp/forgerock-parent.git</developerConnection>
         <url>https://github.com/openam-jp/forgerock-parent</url>
-    </scm>
+      <tag>2.0.7</tag>
+  </scm>
 
     <properties>
         <!-- ************** -->
@@ -160,7 +161,7 @@
         <netbeans.checkstyle.format>true</netbeans.checkstyle.format>
 
         <!--  ForgeRock build tools version -->
-        <forgerockBuildToolsVersion>1.0.4-SNAPSHOT</forgerockBuildToolsVersion>
+        <forgerockBuildToolsVersion>1.0.4</forgerockBuildToolsVersion>
 
         <!-- Forgerock binary license name -->
         <binary.license.name>Forgerock_License.txt</binary.license.name>
