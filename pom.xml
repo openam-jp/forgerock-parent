@@ -172,6 +172,31 @@
     </prerequisites>
 
     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.4</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>prepare-pakage</id>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <propertyName>jacocoArgs</propertyName>
+                    <append>true</append>
+                </configuration>
+            </plugin>
+        </plugins>
         <pluginManagement>
             <!--    mvn versions:display-plugin-updates
                     mvn versions:display-dependency-updates
@@ -419,7 +444,7 @@
                         </dependency>
                     </dependencies>
                     <configuration>
-                        <argLine>${jdk11-build.opt.add-all-system}</argLine>
+                       <argLine>${jdk11-build.opt.add-all-system}</argLine>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -651,10 +676,20 @@
                <jdk>[11,)</jdk>
            </activation>
             <properties>
-                <jdk11-build.opt.add-all-system>--add-modules ALL-SYSTEM</jdk11-build.opt.add-all-system>
+                <jdk11-build.opt.add-all-system>${jacocoArgs} --add-modules ALL-SYSTEM</jdk11-build.opt.add-all-system>
                 <jdk11-javadoc.opt.html4>-html4</jdk11-javadoc.opt.html4>
                 <jdk11-surefire.opt>--add-opens java.base/jdk.internal.util=ALL-UNNAMED --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.xml/jdk.xml.internal=ALL-UNNAMED</jdk11-surefire.opt>
                 <jdk11-openamjp.internal-module>openam-internal</jdk11-openamjp.internal-module>
+            </properties>
+       </profile>
+       <profile>
+           <id>jdk8-option</id>
+           <activation>
+               <jdk>(,11)</jdk>
+           </activation>
+            <properties>
+                <jdk11-build.opt.add-all-system>${jacocoArgs}</jdk11-build.opt.add-all-system>
+                <jdk11-javadoc.opt.html4>-html4</jdk11-javadoc.opt.html4>
             </properties>
        </profile>
         <profile>
@@ -1129,7 +1164,7 @@
             </plugins>
           </reporting>
         </profile>
-       <profile>
+        <profile>
           <!-- This profile gets the license from SVN if the URL is set -->
           <id>get-binary-license</id>
           <activation>
@@ -1196,7 +1231,7 @@
                 </plugin>
              </plugins>
           </build>
-       </profile>
+        </profile>
     </profiles>
 
     <reporting>
@@ -1216,6 +1251,17 @@
                             <report>plugin-management</report>
                             <report>distribution-management</report>
                             <report>summary</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>report</report>
                         </reports>
                     </reportSet>
                 </reportSets>
