@@ -22,7 +22,7 @@
  your own identifying information:
  "Portions Copyrighted [year] [name of copyright owner]"
 
- Portions Copyrighted 2019-2020 Open Source Solution Technology Corporation
+ Portions Copyrighted 2019-2022 OSSTech Corporation
  Portions Copyrighted 2019 OGIS-RI Co., Ltd.
 -->
 
@@ -56,6 +56,13 @@
         <developerConnection>scm:git:git@github.com:openam-jp/forgerock-parent.git</developerConnection>
         <url>https://github.com/openam-jp/forgerock-parent</url>
     </scm>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/openam-jp/forgerock-parent</url>
+        </repository>
+    </distributionManagement>
 
     <properties>
         <!-- ************** -->
