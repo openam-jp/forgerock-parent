@@ -22,7 +22,7 @@
  your own identifying information:
  "Portions Copyrighted [year] [name of copyright owner]"
 
- Portions Copyrighted 2019 Open Source Solution Technology Corporation
+ Portions Copyrighted 2019-2023 OSSTech Corporation
  Portions Copyrighted 2019 OGIS-RI Co., Ltd.
 -->
 
@@ -30,7 +30,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>jp.openam</groupId>
     <artifactId>forgerock-parent</artifactId>
-    <version>2.0.7</version>
+    <version>2.0.7.1</version>
     <packaging>pom</packaging>
     <name>ForgeRock Parent</name>
     <description>Parent POM for ForgeRock projects. Provides default project build configuration.</description>
@@ -55,7 +55,7 @@
         <connection>scm:git:https://github.com/openam-jp/forgerock-parent.git</connection>
         <developerConnection>scm:git:git@github.com:openam-jp/forgerock-parent.git</developerConnection>
         <url>https://github.com/openam-jp/forgerock-parent</url>
-      <tag>2.0.7</tag>
+      <tag>2.0.7.1</tag>
   </scm>
 
     <properties>
@@ -161,7 +161,7 @@
         <netbeans.checkstyle.format>true</netbeans.checkstyle.format>
 
         <!--  ForgeRock build tools version -->
-        <forgerockBuildToolsVersion>1.0.4</forgerockBuildToolsVersion>
+        <forgerockBuildToolsVersion>1.0.4.1</forgerockBuildToolsVersion>
 
         <!-- Forgerock binary license name -->
         <binary.license.name>Forgerock_License.txt</binary.license.name>
